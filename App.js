@@ -3,6 +3,9 @@ import WelcomeScreen from './app/screens/WelcomeScreen';
 import ViewImageScreen from './app/screens/ViewImageScreen';
 import { StyleSheet, Text, View } from "react-native";
 
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
+//import AppText from './app/components/AppText';
 
 // export default function App() {
 //   return (
@@ -12,24 +15,16 @@ import { StyleSheet, Text, View } from "react-native";
 // }
 
 export default function App() {
-  console.log("App executed");
+  //console.log("App executed");
 
-  //Styling Text
+  //Encapsulating Styles
   return (
     <View style={{
       flex: 1, 
       justifyContent: 'center', 
       alignItems: 'center'
     }}>
-    <Text style={{
-     fontSize: 30, 
-     fontStyle: 'italic', 
-     fontWeight: "600", 
-     color: 'tomato', 
-     textTransform: 'capitalize', 
-     textAlign: 'center'
-     //fontFamily: "Roboto"
-    }}>I love react native</Text>
+      <MaterialCommunityIcons name="email" size={200} color="red"/>
     </View>
   );
 }
