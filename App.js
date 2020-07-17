@@ -1,28 +1,20 @@
 import React from 'react';
-import { Dimensions, StyleSheet, Text, SafeAreaView, StatusBar, Platform, View } from 'react-native';
-import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+//import { View } from 'react-native';
+import WelcomeScreen from './app/screens/WelcomeScreen';
+
 
 export default function App() {
 
-  console.log(useDeviceOrientation());
-
-  const { landscape } = useDeviceOrientation();
-
   return (
-    <SafeAreaView style={styles.container}>
-     <View style={{
-     backgroundColor: 'dodgerblue', 
-     width: "100%", 
-     height: landscape ? "100%": "30%"}}></View>
-    </SafeAreaView>
+    <WelcomeScreen/>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center'
-   //justifyContent: 'center',
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#fff',
+//     alignItems: 'center'
+//    //justifyContent: 'center',
+//   },
+// });
