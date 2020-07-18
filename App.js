@@ -3,9 +3,8 @@ import WelcomeScreen from './app/screens/WelcomeScreen';
 import ViewImageScreen from './app/screens/ViewImageScreen';
 import { StyleSheet, Text, View } from "react-native";
 
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-//import AppText from './app/components/AppText';
+import AppText from './app/components/AppText';
 
 // export default function App() {
 //   return (
@@ -24,7 +23,7 @@ export default function App() {
       justifyContent: 'center', 
       alignItems: 'center'
     }}>
-      <MaterialCommunityIcons name="email" size={200} color="red"/>
+      <AppText>hello world</AppText>
     </View>
   );
 }
