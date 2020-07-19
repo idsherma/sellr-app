@@ -5,6 +5,7 @@ import { StyleSheet, Text, View } from "react-native";
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import ViewImageScreen from './app/screens/ViewImageScreen';
 import ListingDetailScreen from './app/screens/ListingDetailScreen';
+import MessagesScreen from './app/screens/MessagesScreen';
 
 //components
 import AppButton from './app/components/AppButton';
@@ -14,9 +15,10 @@ import CardComponent from './app/components/CardComponent';
 export default function App() {
   return (
   //<WelcomeScreen/>
-  <ViewImageScreen/>
-
+  //<ViewImageScreen/>
   //<ListingDetailScreen/>
+
+  <MessagesScreen/>
 
   // <View style={{
   //         flex: 1, 
@@ -25,6 +27,7 @@ export default function App() {
   //  }}>
   //         <AppButton title="Login" onPress={() => console.log('tapped')}/>
   //   </View>
+  
   );
 }
 
