@@ -1,29 +1,41 @@
 import React from 'react';
-import WelcomeScreen from './app/screens/WelcomeScreen';
-import ViewImageScreen from './app/screens/ViewImageScreen';
 import { StyleSheet, Text, View } from "react-native";
 
+//screens
+import WelcomeScreen from './app/screens/WelcomeScreen';
+import ViewImageScreen from './app/screens/ViewImageScreen';
+import ListingDetailScreen from './app/screens/ListingDetailScreen';
 
-import AppText from './app/components/AppText';
+//components
+import AppButton from './app/components/AppButton';
+import CardComponent from './app/components/CardComponent';
+//import AppText from './app/components/AppText';
+
+export default function App() {
+  return (
+  //<WelcomeScreen/>
+  <ViewImageScreen/>
+
+  //<ListingDetailScreen/>
+
+  // <View style={{
+  //         flex: 1, 
+  //         justifyContent: 'center', 
+  //         alignItems: 'center'
+  //  }}>
+  //         <AppButton title="Login" onPress={() => console.log('tapped')}/>
+  //   </View>
+  );
+}
 
 // export default function App() {
 //   return (
-//     // <WelcomeScreen/>
-//    <ViewImageScreen/>
+//     <View style={{
+//       flex: 1, 
+//       justifyContent: 'center', 
+//       alignItems: 'center'
+//     }}>
+//       <AppText>hello world</AppText>
+//     </View>
 //   );
 // }
-
-export default function App() {
-  //console.log("App executed");
-
-  //Encapsulating Styles
-  return (
-    <View style={{
-      flex: 1, 
-      justifyContent: 'center', 
-      alignItems: 'center'
-    }}>
-      <AppText>hello world</AppText>
-    </View>
-  );
-}
