@@ -10,6 +10,9 @@ import MessagesScreen from './app/screens/MessagesScreen';
 //components
 import AppButton from './app/components/AppButton';
 import CardComponent from './app/components/CardComponent';
+import Screen from './app/components/Screen';
+import Icon from './app/components/Icon';
+import ListItem from './app/components/ListItem';
 //import AppText from './app/components/AppText';
 
 export default function App() {
@@ -18,7 +21,18 @@ export default function App() {
   //<ViewImageScreen/>
   //<ListingDetailScreen/>
 
-  <MessagesScreen/>
+  //<MessagesScreen/>
+  <Screen>
+    <ListItem
+      title="My title"
+      subTitle="My subtitle"
+      ImageComponent={<Icon name="email" />}
+    />
+    <ListItem
+      title="My title"
+      ImageComponent={<Icon name="email" />}
+    />
+  </Screen>
 
   // <View style={{
   //         flex: 1, 
