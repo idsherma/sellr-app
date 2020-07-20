@@ -15,6 +15,7 @@ import CardComponent from './app/components/CardComponent';
 import Screen from './app/components/Screen';
 import Icon from './app/components/Icon';
 import ListItem from './app/components/ListItem';
+import AppTextInput from './app/components/AppTextInput';
 
 export default function App() {
 
@@ -27,20 +28,9 @@ export default function App() {
   //<MessagesScreen/>
   //<AccountScreen />
   //<ListingScreens />
+
   <Screen>
-    <Text>{firstName}</Text>
-    <TextInput 
-      //can capture passwords
-      secureTextEntry={true}
-      //keyboardType="numeric"
-      maxLength={5}
-      onChangeText={text => setFirstName(text)}
-      placeholder="First Name"
-      style={{
-        borderBottomColor: '#ccc', 
-        borderBottomWidth: 1
-      }}
-    />
+    <AppTextInput placeholder="Username" icon="email"/>
   </Screen>
   );
 }

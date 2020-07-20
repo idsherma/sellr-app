@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
         fontWeight: '500'
     }, 
     subtitle: {
-        color: colors.darkgrey
+        color: colors.dark_grey
     }
 });
 
