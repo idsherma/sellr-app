@@ -31,11 +31,11 @@ export default function App() {
   //<WelcomeScreen/>
   //<ViewImageScreen/>
   //<ListingDetailScreen/>
-  //<MessagesScreen/>
+  <MessagesScreen/>
   //<AccountScreen />
   //<ListingScreens />
   //<LoginScreen />
   //<ListingEditScreen />
-    <AppModal />
+  //<AppModal />
   );
 }
