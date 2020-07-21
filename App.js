@@ -16,15 +16,11 @@ import AppButton from './app/components/AppButton';
 import CardComponent from './app/components/CardComponent';
 import Screen from './app/components/Screen';
 import Icon from './app/components/Icon';
-import ListItem from './app/components/ListItem';
+import ListItem from './app/components/lists/ListItem';
 import AppTextInput from './app/components/AppTextInput';
 import AppPicker from './app/components/AppPicker';
 
 export default function App() {
-
-  //const [isNew, setIsNew] = useState(false);
-
-  //const [category, setCategory] = useState(categories[0]);
 
   return (
   //<WelcomeScreen/>
