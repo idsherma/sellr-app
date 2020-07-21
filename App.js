@@ -8,6 +8,7 @@ import ListingDetailScreen from './app/screens/ListingDetailScreen';
 import MessagesScreen from './app/screens/MessagesScreen';
 import AccountScreen from './app/screens/AccountScreen';
 import ListingScreens from './app/screens/ListingScreens';
+import LoginScreen from './app/screens/LoginScreen';
 
 //components
 import AppButton from './app/components/AppButton';
@@ -37,21 +38,17 @@ export default function App() {
   //<MessagesScreen/>
   //<AccountScreen />
   //<ListingScreens />
+  <LoginScreen />
 
-  <Screen>
-    {/* <Switch 
-      value={isNew} 
-      onValueChange={newValue => setIsNew(newValue)}
-    /> */}
-
-    <AppPicker 
-      selectedItem={category}
-      onSelectItem={item => setCategory(item)}
-      items={categories} 
-      icon="apps" 
-      placeholder="Category" 
-    />
-    <AppTextInput icon="email" placeholder="email"/>
-  </Screen>
+  // <Screen>
+  //   <AppPicker 
+  //     selectedItem={category}
+  //     onSelectItem={item => setCategory(item)}
+  //     items={categories} 
+  //     icon="apps" 
+  //     placeholder="Category" 
+  //   />
+  //   <AppTextInput icon="email" placeholder="email"/>
+  // </Screen>
   );
 }
