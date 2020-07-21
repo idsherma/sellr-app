@@ -19,7 +19,6 @@ import Icon from './app/components/Icon';
 import ListItem from './app/components/ListItem';
 import AppTextInput from './app/components/AppTextInput';
 import AppPicker from './app/components/AppPicker';
-import AppModal from './app/components/Modal';
 
 export default function App() {
 
@@ -31,11 +30,10 @@ export default function App() {
   //<WelcomeScreen/>
   //<ViewImageScreen/>
   //<ListingDetailScreen/>
-  <MessagesScreen/>
+  //<MessagesScreen/>
   //<AccountScreen />
   //<ListingScreens />
   //<LoginScreen />
-  //<ListingEditScreen />
-  //<AppModal />
+  <ListingEditScreen />
   );
 }
