@@ -19,6 +19,7 @@ import Icon from './app/components/Icon';
 import ListItem from './app/components/ListItem';
 import AppTextInput from './app/components/AppTextInput';
 import AppPicker from './app/components/AppPicker';
+import AppModal from './app/components/Modal';
 
 export default function App() {
 
@@ -34,7 +35,7 @@ export default function App() {
   //<AccountScreen />
   //<ListingScreens />
   //<LoginScreen />
-  <ListingEditScreen />
-
+  //<ListingEditScreen />
+    <AppModal />
   );
 }
