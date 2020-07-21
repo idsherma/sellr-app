@@ -9,6 +9,7 @@ import MessagesScreen from './app/screens/MessagesScreen';
 import AccountScreen from './app/screens/AccountScreen';
 import ListingScreens from './app/screens/ListingScreens';
 import LoginScreen from './app/screens/LoginScreen';
+import ListingEditScreen from './app/screens/ListingEditScreen';
 
 //components
 import AppButton from './app/components/AppButton';
@@ -19,17 +20,11 @@ import ListItem from './app/components/ListItem';
 import AppTextInput from './app/components/AppTextInput';
 import AppPicker from './app/components/AppPicker';
 
-const categories = [
-  { label: "Furniture", value: 1 },
-  { label: "Clothing", value: 2 },
-  { label: "Cameras", value: 3 },
-];
-
 export default function App() {
 
   //const [isNew, setIsNew] = useState(false);
 
-  const [category, setCategory] = useState(categories[0]);
+  //const [category, setCategory] = useState(categories[0]);
 
   return (
   //<WelcomeScreen/>
@@ -38,17 +33,8 @@ export default function App() {
   //<MessagesScreen/>
   //<AccountScreen />
   //<ListingScreens />
-  <LoginScreen />
+  //<LoginScreen />
+  <ListingEditScreen />
 
-  // <Screen>
-  //   <AppPicker 
-  //     selectedItem={category}
-  //     onSelectItem={item => setCategory(item)}
-  //     items={categories} 
-  //     icon="apps" 
-  //     placeholder="Category" 
-  //   />
-  //   <AppTextInput icon="email" placeholder="email"/>
-  // </Screen>
   );
 }
