@@ -1,6 +1,16 @@
 //import React, { useState } from 'react';
-import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, Switch, Button, Image } from "react-native";
+import React, {
+  useEffect,
+  useState
+} from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Switch,
+  Button,
+  Image
+} from "react-native";
 import * as ImagePicker from 'expo-image-picker';
 import * as Permissions from 'expo-permissions';
 
@@ -22,64 +32,37 @@ import Icon from './app/components/Icon';
 import ListItem from './app/components/lists/ListItem';
 import AppTextInput from './app/components/AppTextInput';
 import AppPicker from './app/components/AppPicker';
+import ImageInput from './app/components/ImageInput';
+import ImageInputList from './app/components/ImageInputList';
 
 export default function App() {
-  const [imageUri, setimageUri] = useState();
-  const requestPermission = async () => {
+  const [imageUris, setImageUris] = useState([]);
 
-    const result = await Permissions.askAsync(Permissions.CAMERA_ROLL, Permissions.LOCATION);
-
-
-
-    //destructuring granted 
-    const { granted } = await ImagePicker.requestCameraRollPermissionsAsync();
-
-    if(!granted) {
-      alert('You need to enable permission to access the library');
-    }
+  const handleAdd = uri => {
+    setImageUris([...imageUris, uri]);
   }
 
-  //useEffect hook 
-  //only want to ask permission only the first time the user uses the app
-  useEffect(async () => {
-    
-    requestPermission();
-    //implicitly returns a promise b/c we're using `async`
-  }, [])
-
-  const selectImage = async () => {
-    try {
-      const result = await ImagePicker.launchImageLibraryAsync();
-      
-      //if user doesnt cancel
-      if(!result.cancelled) {
-        setimageUri(result.uri);
-      }
-
-    } catch (error) {
-      console.log('error reading an image', error);
-    }
+  const handleRemove = uri => {
+    setImageUris(imageUris.filter(imageUri => imageUri !== uri));
   }
+
 
   return (
-  //<WelcomeScreen/>
-  //<ViewImageScreen/>
-  //<ListingDetailScreen/>
-  //<MessagesScreen/>
-  //<AccountScreen />
-  //<ListingScreens />
-  //<LoginScreen />
-  //<ListingEditScreen />
+    //<WelcomeScreen/>
+    //<ViewImageScreen/>
+    //<ListingDetailScreen/>
+    //<MessagesScreen/>
+    //<AccountScreen />
+    //<ListingScreens />
+    //<LoginScreen />
+    //<ListingEditScreen />
 
-  //playing with ImagePicker
-  //in class components, we have componentDidMount
-  //useEffect hook in functional components 
-  <Screen>
-    <Button title="Select Image" onPress={selectImage} />
-    <Image
-      source={{uri: imageUri}}
-      style={{width: 200, height: 200}}
-    />
-  </Screen>
+    <Screen>
+      <ImageInputList 
+      imageUris = {imageUris}
+      onAddImage = {uri => handleAdd(uri)}
+      onRemoveImage={uri => handleRemove(uri)}
+    /> 
+    </Screen>
   );
 }
