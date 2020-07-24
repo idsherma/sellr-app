@@ -19,7 +19,7 @@ const listings = [
     },
 ];
 
-function ListingScreens() {
+function ListingScreens({ navigation }) {
     return (
         <Screen style={styles.screen}>
             <FlatList 
@@ -30,6 +30,7 @@ function ListingScreens() {
                         title={item.title}
                         subTitle={`$${item.price}`}
                         image={item.image}
+                        onPress={() => navigation.navigate("ListingDetails", item)}
                     />
                 }
             />
