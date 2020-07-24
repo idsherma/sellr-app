@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+//import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { StyleSheet, Text, View, Switch } from "react-native";
+import * as ImagePicker from 'expo-image-picker';
 
 //screens
 import WelcomeScreen from './app/screens/WelcomeScreen';
@@ -22,6 +24,30 @@ import AppPicker from './app/components/AppPicker';
 
 export default function App() {
 
+  const requestPermission = async () => {
+    // const result = await ImagePicker.requestCameraRollPermissionsAsync
+
+    // //granted = boolean
+    // if(!result.granted) {
+    //   alert('you need to enable permission to access the library');
+    // }
+
+    //destructuring granted 
+    const { granted } = await ImagePicker.requestCameraRollPermissionsAsync();
+
+    if(!granted) {
+      alert('You need to enable permission to access the library');
+    }
+  }
+
+  //useEffect hook 
+  //only want to ask permission only the first time the user uses the app
+  useEffect(async () => {
+    
+    requestPermission();
+    //implicitly returns a promise b/c we're using `async`
+  }, [])
+
   return (
   //<WelcomeScreen/>
   //<ViewImageScreen/>
@@ -30,6 +56,13 @@ export default function App() {
   //<AccountScreen />
   //<ListingScreens />
   //<LoginScreen />
-  <ListingEditScreen />
+  //<ListingEditScreen />
+
+  //playing with ImagePicker
+  //in class components, we have componentDidMount
+  //useEffect hook in functional components 
+  <Screen>
+    
+  </Screen>
   );
 }
