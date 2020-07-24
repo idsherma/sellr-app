@@ -36,16 +36,6 @@ import ImageInput from './app/components/ImageInput';
 import ImageInputList from './app/components/ImageInputList';
 
 export default function App() {
-  const [imageUris, setImageUris] = useState([]);
-
-  const handleAdd = uri => {
-    setImageUris([...imageUris, uri]);
-  }
-
-  const handleRemove = uri => {
-    setImageUris(imageUris.filter(imageUri => imageUri !== uri));
-  }
-
 
   return (
     //<WelcomeScreen/>
@@ -55,14 +45,14 @@ export default function App() {
     //<AccountScreen />
     //<ListingScreens />
     //<LoginScreen />
-    //<ListingEditScreen />
+    <ListingEditScreen />
 
-    <Screen>
-      <ImageInputList 
-      imageUris = {imageUris}
-      onAddImage = {uri => handleAdd(uri)}
-      onRemoveImage={uri => handleRemove(uri)}
-    /> 
-    </Screen>
+    // <Screen>
+    //   <ImageInputList 
+    //   imageUris = {imageUris}
+    //   onAddImage = {uri => handleAdd(uri)}
+    //   onRemoveImage={uri => handleRemove(uri)}
+    // /> 
+    // </Screen>
   );
 }
