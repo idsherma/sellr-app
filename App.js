@@ -19,6 +19,7 @@ import AccountScreen from './app/screens/AccountScreen';
 import ListingScreens from './app/screens/ListingScreens';
 import LoginScreen from './app/screens/LoginScreen';
 import ListingEditScreen from './app/screens/ListingEditScreen';
+import RegisterScreen from './app/screens/RegisterScreen';
 
 //components
 import AppButton from './app/components/AppButton';
@@ -41,7 +42,8 @@ export default function App() {
     //<AccountScreen />
     //<ListingScreens />
     //<LoginScreen />
-    <ListingEditScreen />
+    //<ListingEditScreen />
+    <RegisterScreen />
 
     // <Screen>
     //   <ImageInputList 
