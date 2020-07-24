@@ -4,7 +4,7 @@ import { StyleSheet, View, FlatList } from 'react-native';
 import Screen from '../components/Screen';
 import ListItem from '../components/lists/ListItem';
 import Icon from '../components/Icon';
-
+import routes from '../components/navigation/routes';
 import colors from '../config/colors';
 import ListItemSeparator from '../components/lists/ListItemSeparator';
 
@@ -15,6 +15,7 @@ const menuItems = [
         name: "format-list-bulleted",
         backgroundColor: colors.primary,
       },
+      targetScreen: routes.LISTING_EDIT
     },
     {
       title: "My Messages",
@@ -22,11 +23,12 @@ const menuItems = [
         name: "email",
         backgroundColor: colors.secondary,
       },
+      targetScreen: routes.MESSAGES
     },
 ];
   
 
-const AccountScreen = () => {
+const AccountScreen = ({ navigation }) => {
     return (
         <Screen style={styles.screen}>
             <View style={styles.container}>
@@ -50,6 +52,7 @@ const AccountScreen = () => {
                                 backgroundColor={item.icon.backgroundColor}
                             />
                         }
+                        onPress={() => navigation.navigate(item.targetScreen)}
                     />
                 }
                />
