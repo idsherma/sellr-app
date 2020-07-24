@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import { StyleSheet, Text, View, Switch } from "react-native";
 import * as ImagePicker from 'expo-image-picker';
+import * as Permissions from 'expo-permissions';
 
 //screens
 import WelcomeScreen from './app/screens/WelcomeScreen';
@@ -25,12 +26,10 @@ import AppPicker from './app/components/AppPicker';
 export default function App() {
 
   const requestPermission = async () => {
-    // const result = await ImagePicker.requestCameraRollPermissionsAsync
 
-    // //granted = boolean
-    // if(!result.granted) {
-    //   alert('you need to enable permission to access the library');
-    // }
+    const result = await Permissions.askAsync(Permissions.CAMERA_ROLL, Permissions.LOCATION);
+
+    
 
     //destructuring granted 
     const { granted } = await ImagePicker.requestCameraRollPermissionsAsync();
