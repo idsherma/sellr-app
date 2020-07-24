@@ -1,6 +1,6 @@
 //import React, { useState } from 'react';
-import React, { useEffect } from 'react';
-import { StyleSheet, Text, View, Switch } from "react-native";
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, Text, View, Switch, Button, Image } from "react-native";
 import * as ImagePicker from 'expo-image-picker';
 import * as Permissions from 'expo-permissions';
 
@@ -24,12 +24,12 @@ import AppTextInput from './app/components/AppTextInput';
 import AppPicker from './app/components/AppPicker';
 
 export default function App() {
-
+  const [imageUri, setimageUri] = useState();
   const requestPermission = async () => {
 
     const result = await Permissions.askAsync(Permissions.CAMERA_ROLL, Permissions.LOCATION);
 
-    
+
 
     //destructuring granted 
     const { granted } = await ImagePicker.requestCameraRollPermissionsAsync();
@@ -47,6 +47,20 @@ export default function App() {
     //implicitly returns a promise b/c we're using `async`
   }, [])
 
+  const selectImage = async () => {
+    try {
+      const result = await ImagePicker.launchImageLibraryAsync();
+      
+      //if user doesnt cancel
+      if(!result.cancelled) {
+        setimageUri(result.uri);
+      }
+
+    } catch (error) {
+      console.log('error reading an image', error);
+    }
+  }
+
   return (
   //<WelcomeScreen/>
   //<ViewImageScreen/>
@@ -61,7 +75,11 @@ export default function App() {
   //in class components, we have componentDidMount
   //useEffect hook in functional components 
   <Screen>
-    
+    <Button title="Select Image" onPress={selectImage} />
+    <Image
+      source={{uri: imageUri}}
+      style={{width: 200, height: 200}}
+    />
   </Screen>
   );
 }
